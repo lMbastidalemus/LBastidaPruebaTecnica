@@ -1,0 +1,58 @@
+﻿@model ML.Disco
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Form", "Disco", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <form class="form-control">
+        <div class="row" style="margin-top:5rem; margin-left:10rem">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Titulo)
+                @Html.TextBoxFor(model => model.Titulo, new { @class = "form-control" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Artista)
+                @Html.TextBoxFor(model => model.Artista, new { @class = "form-control" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.GeneroMusical)
+                @Html.TextBoxFor(model => model.GeneroMusical, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:5rem; margin-left:10rem">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Duracion)
+                @Html.TextBoxFor(model => model.Duracion, new { @class = "form-control" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Anio)
+                @Html.TextBoxFor(model => model.Anio, new { @class = "form-control" })
+            </div>
+
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Distribuidora)
+                @Html.TextBoxFor(model => model.Distribuidora, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:5rem; margin-left:30rem">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Disponibilidad)
+                @Html.TextBoxFor(model => model.Disponibilidad, new { @class = "form-control" })
+            </div>
+
+
+        </div>
+
+
+    </form>
+    <btn type="submit" @Url.Action("Form", "Disco") class="btn btn-success">Guardar Disco</btn>
+    
+}
+
